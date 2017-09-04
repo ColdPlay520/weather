@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<image src="../../assests/imgs/day.jpg" class="bg" mode="scaleToFill"></image>
+<view class="content">
+  <view class="today">
+    <view class="today-top">
+      <view class="city">{{district}}</view>
+      <view class="street">{{street}}</view>
+      <view class="tmp">{{weatherData.now.tmp}}°</view>
+      <view class="type">{{weatherData.now.cond.txt}} | 空气质量:优</view>
+    </view>
+    <view class="today-bottom">
+      <view class="item">
+        <view class="">{{weatherData.now.wind.dir}}</view>
+        <view class="item-val" wx:if="{{weatherData.now.wind.sc=='微风'}}">2级</view>
+        <view class='item-val' wx:else>{{weatherData.now.wind.sc}}级</view>
+      </view>
+      <view class="vr-l item"> </view>
+      <view class="item">
+        <view class="">相对湿度</view>
+        <view class="item-val">{{weatherData.now.hum}}%</view>
+      </view>
+      <view class="vr-l item"> </view>
+      <view class="item">
+        <view class="">体感温度</view>
+        <view class="item-val">{{weatherData.now.fl}}°</view>
+      </view>
+    </view>
+  </view>
+  <view class="forecasts">
+    <block wx:for="{{weatherData.daily_forecast}}" wx:for-item="fc" wx:for-index="idx">
+      <view class='cast-item'>
+        <view class='cast-weekday' wx:if="{{idx==0}}">今天</view>
+        <view class='cast-weekday' wx:elif="{{idx==1}}">明天</view>
+        <view class='cast-weekday' wx:else>{{weekdays[day]}}</view>
+        <view class='cast-type'>
+         <image class='cast-icon' src='../../assests/icons/{{fc.cond.code_d}}.png'></image>
+         {{fc.cond.txt_d}} | 优
+        </view>
+        <view class='cast-tmp'>{{fc.tmp.max}}° / {{fc.tmp.min}}°</view>
+      </view>
+    </block>
+  </view>
+</view> 

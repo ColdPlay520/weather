@@ -1,0 +1,58 @@
+/**index.wxss**/
+.bg {
+  width: 750rpx;
+  height:680rpx;
+}
+.content {
+  position: absolute;/*绝对定位*/
+  top: 0;
+  left: 0;
+  padding: 50rpx;
+  color: #fff;
+  font-family:Arial, Helvetica, sans-serif;
+}
+.tmp {
+  font-size: 200rpx;
+}
+.today-bottom {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 670rpx;
+  margin-top: 100rpx;
+}
+.vr-l {
+  border-right:1rpx solid #fff;
+}
+.today-bottom .item {
+  text-align: center;
+}
+.today-bottom .item-val {
+  font-size:1.5em;
+  font-weight:bold;
+  margin-top: 10rpx;
+}
+.forecasts {
+  color: #666;
+  margin-top: 56rpx;
+}
+.cast-icon {
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: middle;/*图片旁边的文字的居中方式*/
+}
+.cast-item {
+  display: flex;
+  flex-direction: row;/*横向排列*/
+  width: 670rpx;
+  align-items: center;/*子元素垂直居中*/
+  border-bottom: 1rpx solid #999;
+  padding: 40rpx 0;
+}
+.cast-type {
+  flex-grow: 1;/*表示剩余的空间都给他*/
+  text-align: center;
+}
+
+
+
